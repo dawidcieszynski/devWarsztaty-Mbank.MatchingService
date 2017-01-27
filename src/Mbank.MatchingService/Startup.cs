@@ -29,6 +29,12 @@ namespace Mbank.MatchingService
                 return diagnosticModule.Version(context);
             });
 
+            routeBuilder.MapPost("quote", context =>
+            {
+                var quoteCalculator = new QuoteCalculatorModule();
+                return quoteCalculator.Calculate(context);
+            });
+
             var routes = routeBuilder.Build();
             app.UseRouter(routes);
         }
