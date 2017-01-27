@@ -1,0 +1,4 @@
+matchingservice:
+  build: .
+  ports:
+    - "5001"
